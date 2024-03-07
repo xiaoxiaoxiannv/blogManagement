@@ -1,0 +1,286 @@
+@import '../var/index.less';
+
+:root {
+  --el-border-color: @color-primary-light-2;
+  --el-font-size-base: 1rem;
+}
+
+.el-card {
+  border: none;
+}
+
+// 圆角
+.el-input-number {
+  &__decrease {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  &__increase {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+.el-input {
+  .el-input__wrapper {
+    border-radius: 10px;
+  }
+}
+
+.el-textarea {
+  &__inner {
+    border-radius: 10px;
+  }
+}
+
+.el-select-v2 {
+  &__wrapper {
+    border-radius: 10px;
+  }
+}
+
+// button
+.el-button {
+  border-radius: 10px;
+
+  &:not(.el-button--primary, .el-button--success, .el-button--danger, .el-button--info, .el-button--warning, .is-link) {
+    --el-button-text-color: @color-primary-light-1;
+  }
+
+  &.button-search {
+    --el-button-bg-color: #73cbff;
+    --el-button-text-color: var(--el-color-white);
+    --el-button-border-color: #73cbff;
+    --el-button-hover-bg-color: rgb(157, 219, 255);
+    --el-button-hover-text-color: var(--el-color-white);
+    --el-button-hover-border-color: rgb(157, 219, 255);
+    --el-button-active-bg-color: rgb(96, 166, 208);
+    --el-button-active-border-color: rgb(96, 166, 208);
+  }
+}
+
+// 修复输入下划线_不显示问题
+.el-input__inner {
+  line-height: calc(var(--el-input-inner-height, 30px) + 1px);
+  &::placeholder {
+    color: @color-primary-light-1;
+  }
+}
+
+// table
+.el-table {
+  box-shadow: 0px 0px 4px 0px #ecedff;
+  border-radius: 20px;
+
+  &__header-wrapper {
+    thead {
+      color: #333333;
+
+      tr {
+        th {
+          font-weight: 400;
+        }
+
+        .el-table__cell {
+          background-color: @color-primary-light-2;
+        }
+      }
+    }
+  }
+}
+
+.el-table.is-scrolling-right th.el-table-fixed-column--right {
+  background-color: @color-primary-light-2;
+}
+
+.el-table.is-scrolling-none th.el-table-fixed-column--left,
+.el-table.is-scrolling-none th.el-table-fixed-column--right {
+  background-color: @color-primary-light-2;
+}
+
+.el-table-v2 {
+  border-radius: 20px;
+
+  &__table {
+    border-radius: 20px;
+    &.el-table-v2__right {
+      border-radius: 0 20px 20px 0;
+    }
+  }
+}
+
+//dialog
+.el-dialog {
+  background: #f6f8fe;
+  border-radius: 20px;
+
+  &__header {
+    button {
+      font-size: 24px;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 30px;
+  }
+
+  &__footer {
+    padding-bottom: 40px;
+  }
+}
+
+// radio
+.el-radio-group {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  .el-radio-button {
+    border-radius: 10px;
+    overflow: hidden;
+
+    .el-radio-button__inner {
+      font-size: 16px;
+      line-height: 22px;
+      border: 0;
+      background-color: #f8f8f8;
+      padding: 9px 27px;
+    }
+    &.is-active {
+      background: var(--el-color-primary);
+      color: #ffffff;
+
+      .el-radio-button__inner {
+        border-image: 0;
+      }
+
+      .el-radio-button__original-radio {
+        &:checked + .el-radio-button__inner {
+          background: var(--el-color-primary);
+          color: #ffffff;
+          box-shadow: 0px 0 0;
+        }
+      }
+    }
+  }
+}
+
+// form
+.el-form {
+  .el-form-item__label {
+    font-size: 16px;
+    color: @color-primary-light-1;
+    padding: 0 20px 0 0;
+  }
+
+  .el-form-item.is-required:not(.is-no-asterisk).asterisk-left
+    > .el-form-item__label-wrap
+    > .el-form-item__label:before,
+  .el-form-item.is-required:not(.is-no-asterisk).asterisk-left > .el-form-item__label:before {
+    color: @color-primary-light-1;
+    transform: translateY(10%);
+  }
+}
+
+// messageBox
+.el-message-box {
+  width: 480px;
+  background: #f6f8fe;
+  border-radius: 20px;
+  padding-bottom: 40px;
+  &__header {
+    padding-bottom: 20px;
+    button {
+      font-size: 24px;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 30px;
+  }
+
+  &__container {
+    font-size: 18px;
+    color: #666666;
+    line-height: 30px;
+  }
+
+  &__btns {
+    padding-top: 50px;
+    .el-button {
+      height: 40px;
+      width: 128px;
+    }
+
+    .el-button:nth-child(1) {
+      color: @color-primary-light-1;
+      margin-right: 48px;
+    }
+  }
+}
+
+// datePicker
+.el-date-editor {
+  border-radius: 10px;
+  &.el-date-editor--daterange {
+    .el-range-separator {
+      color: @color-primary-light-2;
+    }
+
+    .el-range-input {
+      &::placeholder {
+        color: @color-primary-light-1;
+      }
+    }
+  }
+}
+
+// dropdown
+.hand-dropdown {
+  border-radius: 20px 20px 0px 20px;
+  box-shadow: none !important;
+  overflow: hidden;
+  .el-scrollbar {
+    &__wrap {
+      .el-dropdown__list {
+        .el-dropdown-menu {
+          background: #c3c5ff;
+
+          &__item {
+            color: #ffffff;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// tag
+.el-tag.el-tag--plain {
+  border-radius: 0px 10px 10px 10px;
+  border: 1px solid #7bc5ff;
+  color: #63beff;
+
+  .el-tag__close {
+    color: #63beff;
+  }
+}
+
+// upload
+.el-upload-list {
+  &.el-upload-list--text {
+    .el-upload-list__item.is-ready {
+      background-color: var(--el-fill-color-light);
+
+      .el-icon--close {
+        display: inline-flex;
+      }
+    }
+  }
+}
