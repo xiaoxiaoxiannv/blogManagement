@@ -36,13 +36,11 @@ import {
   BreadCrumb,
   AppTitle
 } from './components/index'
-import { createAsyncComponent } from '@/utils/factory/createAsyncComponent'
 import AppLogo from '@/components/application/AppLogo.vue'
 import Menu from '@/layout/menu/LayoutMenu.vue'
 import { useHeaderSetting } from '@/hooks/setting/useHeaderSetting'
 import { useAppInject } from '@/hooks/web/useAppInject'
 import SvgIcon from '@/components/icons/SvgIcon.vue'
-import { useUserStore } from '@/store/modules/user'
 import { useRouter } from 'vue-router';
 export default defineComponent({
   name: 'layoutHeader',
@@ -75,7 +73,6 @@ export default defineComponent({
         height: `${unref(getHeaderHeight) / 16}rem`
       }
     })
-    const userStore = useUserStore()
     const router = useRouter()
     const toMessageCenter = () => {
       router.push('/message/audit')

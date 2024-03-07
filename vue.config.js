@@ -45,7 +45,8 @@ module.exports = defineConfig({
     port: '1310',
     proxy: {
       '/blog': {
-        target: 'http://101.132.131.220:10000', // yu
+        // target: 'http://101.132.131.220:10000', // yu
+        target: 'http://127.0.0.1:10000', // yu
         changeOrigin: true // 用于控制请求头中的host值
       }
     }

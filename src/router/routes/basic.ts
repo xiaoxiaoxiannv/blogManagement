@@ -86,15 +86,6 @@ export const ERROR_PAGE: AddRouteRecordRaw = {
         title: '500',
         hideMenu: true
       }
-    },
-    {
-      path: 'test',
-      name: 'Test',
-      component: () => import(/* webpackChunkName: "Test" */ '@/views/error/Test.vue'),
-      meta: {
-        title: 'Test',
-        hideMenu: true
-      }
     }
   ]
 }

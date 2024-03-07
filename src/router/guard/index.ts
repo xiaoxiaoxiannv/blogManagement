@@ -11,7 +11,7 @@ export function setupRouterGuard(router: Router) {
   createPageGuard(router)
   createHttpGuard(router)
   createPageLoading(router)
-  createPageTransitionGuard(router)
+  // createPageTransitionGuard(router)
   createPermissionGuard(router)
 }
 
@@ -43,23 +43,23 @@ function createPageGuard(router: Router) {
 }
 
 // 使用过渡组件
-function createPageTransitionGuard(router: Router) {
-  router.beforeEach((to, from) => {
-    if (!to.meta.loaded && from.name !== undefined) {
-      NProgress.start()
-    }
-    return true
-  })
-
-  router.afterEach((to, from) => {
-    // 进度条消失
-    if (!to.meta.loaded && from.name !== undefined) {
-      NProgress.done()
-    }
-
-    return true
-  })
-}
+// function createPageTransitionGuard(router: Router) {
+//   router.beforeEach((to, from) => {
+//     if (!to.meta.loaded && from.name !== undefined) {
+//       NProgress.start()
+//     }
+//     return true
+//   })
+//
+//   router.afterEach((to, from) => {
+//     // 进度条消失
+//     if (!to.meta.loaded && from.name !== undefined) {
+//       NProgress.done()
+//     }
+//
+//     return true
+//   })
+// }
 
 // 使用PageLoading
 function createPageLoading(router: Router) {

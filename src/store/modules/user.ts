@@ -8,9 +8,6 @@ import { RouteRecordRaw } from 'vue-router'
 import { flatMultiRoutes } from '@/hooks/route'
 import { PageEnum } from '@/enums/pageEnum'
 import { UserInfo, UserState } from '#/store'
-import { usePermissionStore } from '@/store/modules/permission';
-// import { LoginParam, LoginRes } from '#/api'
-// import { usePermissionStore } from './permission'
 
 export const useUserStore = defineStore({
   id: 'app-user',
@@ -106,10 +103,6 @@ export const useUserStore = defineStore({
       if (sessionTimeout) {
         this.setSessionTimeout(false)
       } else {
-        // 动态添加路由
-        // const { buildRoutes } = usePermissionStore()
-        // const newRoutes = await buildRoutes()
-        // console.log('在user.ts中的newRoutes', newRoutes)
         const routes = asyncRoutes
         console.log('在user.ts中的routes', routes)
         // 构建路由

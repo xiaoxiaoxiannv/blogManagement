@@ -1,6 +1,5 @@
 <template>
   <div class="flex items-center cursor-pointer justify-center">
-    <img v-show="props.show" class="logo-size" src="../../assets/img/logo.png" />
   </div>
 </template>
 

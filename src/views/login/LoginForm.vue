@@ -1,7 +1,6 @@
 <!-- eslint-disable import/no-absolute-path -->
 <template>
   <template v-if="getShow">
-    <img class="logo" :src="logoPic" alt="" />
     <div class="title enter-x">
       <h2 class="h-center">欢迎登录</h2>
       <span>TouchMed后台管理系统</span>
@@ -50,7 +49,6 @@ import { ElForm, ElFormItem, ElInput, ElButton, ElNotification } from 'element-p
 import { ref, reactive, unref, computed } from 'vue'
 import { useUserStore } from '@/store/modules/user'
 import { LoginStateEnum, useLoginState } from './useLogin'
-import logoPic from '@/assets/img/logo.png'
 import SvgIcon from '@/components/icons/SvgIcon.vue'
 
 const { getLoginState } = useLoginState()

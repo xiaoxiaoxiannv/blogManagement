@@ -8,9 +8,6 @@
               :is="Component"
             ></component
             >
-<!--            <KeepAlive v-else :include="getCacheTabs">-->
-<!--              <component :is="Component" :key="route.fullPath"></component>-->
-<!--            </KeepAlive>-->
           </Transition>
         </template>
       </router-view>
@@ -19,15 +16,9 @@
 </template>
 
 <script setup lang="ts">
-import { useOtherSetting } from '@/hooks/setting/useOtherSetting'
-import { useTabStore } from '@/store/modules/tabs'
-import { computed } from 'vue'
-const tabStore = useTabStore()
-// loading 在路由守卫修改状态
-const { getPageLoading } = useOtherSetting()
-// 只需要将tab还存在的alive
-// 注意alive的组件名字必须要和getCacheTabs中的参数一样
-const getCacheTabs = computed(() => tabStore.getCacheList)
+import {useOtherSetting} from '@/hooks/setting/useOtherSetting'
+
+const {getPageLoading} = useOtherSetting()
 </script>
 
 <style lang="less" scoped>
@@ -36,7 +27,8 @@ const getCacheTabs = computed(() => tabStore.getCacheList)
   width: 100%;
   height: 100%;
   padding: 15px 30px 0px 30px;
-  .h-full{
+
+  .h-full {
     display: flex;
     flex-direction: column;
   }

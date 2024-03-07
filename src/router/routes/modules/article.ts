@@ -17,7 +17,6 @@ const followupPlan:AddRouteRecordRaw = {
       name: 'ArticleList',
       meta: {
         title: '文章列表'
-        // fixedTab: true
       },
       component: () =>
         import('@/views/modules/article/list/index.vue')

@@ -1,11 +1,11 @@
 <template>
   <div>
     <WidthContainer>
-      <div class="flex items-center justify-between">
+      <div class="headerContainer">
         <div class="flex items-center">
           <ElButton type="primary" size="large" class="w-32" @click="goAddArticle">新增博客</ElButton>
         </div>
-        <div class="flex items-center">
+        <div class="sortContainer">
           <span class="mr-10px">排序</span>
           <ElSelect v-model="dataContainer.sort" size="large" class="w-32" placeholder="请选择" @change="handleSortChange">
             <ElOption label="时间降序" value="desc"></ElOption>
@@ -197,10 +197,17 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
-.title {
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 30px;
+.headerContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .sortContainer{
+    display: flex;
+    align-items: center;
+    span{
+      font-size: 14px;
+    }
+  }
 }
 
 .mr-10px {
