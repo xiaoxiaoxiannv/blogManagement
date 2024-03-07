@@ -5,7 +5,6 @@ import { useRedo, useGo } from '@/hooks/web/usePage'
 import { unref, toRaw } from 'vue'
 import { PageEnum } from '@/enums/pageEnum'
 import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE, ERROR_PAGE } from '@/router/routes/basic'
-import { EXTERNAL_PAGES } from '@/router/routes/external'
 import { WebCache } from '@/utils/cache'
 import setting from '@/settings/projectSetting'
 
@@ -115,8 +114,7 @@ export const useTabStore = defineStore({
       const ignoreRoute = [
         REDIRECT_ROUTE.name,
         PAGE_NOT_FOUND_ROUTE.name,
-        ...(ERROR_PAGE.children || []).map((item) => item.name),
-        ...EXTERNAL_PAGES.map((item) => item.name)
+        ...(ERROR_PAGE.children || []).map((item) => item.name)
       ]
       if (
         path === PageEnum.ERROR_PAGE ||

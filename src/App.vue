@@ -9,13 +9,8 @@
 <script setup lang="ts">
 import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
-import 'dayjs/locale/zh-cn'
-import { useHtmlTitle } from './hooks/web/useHtmlTitle'
 import AppProvider from './components/application/AppProvider.vue'
 import { useDebounceFn } from '@vueuse/core'
-
-// 跟踪修改浏览器标题
-useHtmlTitle()
 
 // 解决ERROR ResizeObserver loop completed with undelivered notifications.
 

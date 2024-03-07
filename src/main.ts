@@ -4,13 +4,10 @@ import 'element-plus/dist/index.css'
 import 'tailwindcss/tailwind.css'
 // 引入与element样式冲突的文件
 import './style/tailwindcss/preflight.css'
-
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import './style/index.less'
-
 import { createApp } from 'vue'
 import App from './App.vue'
-import './registerServiceWorker'
 import { router, setupRouter } from './router'
 import { setupRouterGuard } from './router/guard'
 import { setupStore } from './store'
@@ -18,9 +15,6 @@ import { initConfigStore } from './settings/init'
 import { setupDirectives } from './directives'
 import { preLoader } from './utils/preLoader'
 import { setupComponents } from './components/global'
-
-//  qiankun
-// import './microApp'
 
 async function launch() {
   // 注入svg和公用图片

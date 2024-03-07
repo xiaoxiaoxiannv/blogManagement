@@ -1,6 +1,5 @@
 import type { RouteMeta } from 'vue-router'
 import { Component } from 'vue'
-import { IconifyIcon } from '@iconify/vue/dist/offline'
 
 export interface MenuButton {
   buttonId: string | number
@@ -17,8 +16,6 @@ export interface Menu {
   redirect?: string
 
   orderNo?: number
-
-  icon?: string | IconifyIcon
 
   children?: Menu[]
 

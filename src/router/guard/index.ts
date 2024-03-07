@@ -1,7 +1,6 @@
 import { setRouteChange } from '@/hooks/mitt/routeChange'
 import type { Router } from 'vue-router'
 import { createPermissionGuard } from './permissionGuard'
-import { createStateGuard } from './stateGuard'
 // 进度条
 import NProgress from 'nprogress'
 import { AxiosCancel } from '@/utils/axios/axiosCancel'
@@ -9,7 +8,6 @@ import { useAppStore } from '@/store/modules/app'
 import { useUserStore } from '@/store/modules/user'
 
 export function setupRouterGuard(router: Router) {
-  createStateGuard(router)
   createPageGuard(router)
   createHttpGuard(router)
   createPageLoading(router)

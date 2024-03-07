@@ -2,19 +2,11 @@ import type { Router, RouteRecordRaw } from 'vue-router'
 import { useUserStoreOther } from '@/store/modules/user'
 import { asyncRoutes } from '../routes/modules'
 import { flatMultiRoutes } from '@/hooks/route'
-import { EXTERNAL_PAGES } from '../routes/external'
-import { router } from '@/router';
-// import { usePermissionStore } from '@/store/modules/permission'
 
 export function createPermissionGuard(router: Router) {
   const userStore = useUserStoreOther()
 
   router.beforeEach(async (to, from, next) => {
-    // 外部页不校验直接跳
-    if (EXTERNAL_PAGES.find((page) => page.name === to.name)) {
-      next()
-      return
-    }
     const token = 'fake token ========='
     // 判断登录页
     if (to.path === '/login') {

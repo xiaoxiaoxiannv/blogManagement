@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent, reactive, ref } from 'vue'
 import { ElForm, ElFormItem, ElMessage, ElUpload, ElIcon } from 'element-plus'
-import { useTabs } from '@/hooks/web/useTabs'
 import { addNewArticle, getArticleDetail} from '@/api/article'
 import { useRouter } from 'vue-router'
 import { cloneDeep } from 'lodash-es';
@@ -92,10 +91,8 @@ export default defineComponent({
         console.error('操作失败:', error.message);
       }
     }
-    const { closeCurrent } = useTabs()
-// 取消返回文章列表
     function handleCancel() {
-      closeCurrent('/')
+      router.push('/')
     }
     const toolbarsExclude=['image','save','github','prettier']
     const debouncedSubmitForm = debounce(submitForm, 1000);

@@ -2,21 +2,19 @@
   <div class="header-fill" :style="getDomHeight"></div>
   <div class="header-fixed" :style="{ ...getDomWidth, ...getDomHeight }">
     <LayoutHeader v-if="getShowHeader"></LayoutHeader>
-    <Tabs v-if="getShowTabs"></Tabs>
   </div>
 </template>
 
 <script lang="ts">
 import { computed, CSSProperties, defineComponent, unref } from 'vue'
 import LayoutHeader from './LayoutHeader.vue'
-import Tabs from '../tabs/index.vue'
 import { useSiderSetting } from '@/hooks/setting/useSiderSetting'
 import { useTabsSetting } from '@/hooks/setting/useTabsSetting'
 import { useHeaderSetting } from '@/hooks/setting/useHeaderSetting'
 import { useAppInject } from '@/hooks/web/useAppInject'
 export default defineComponent({
   name: 'Header',
-  components: { LayoutHeader, Tabs },
+  components: { LayoutHeader},
   setup() {
     const { getIsMobile } = useAppInject()
     const { getRealWidth, getShowSideMenu } = useSiderSetting()

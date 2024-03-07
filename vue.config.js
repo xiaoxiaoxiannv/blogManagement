@@ -55,8 +55,6 @@ module.exports = defineConfig({
     config.resolve.alias.set('@', resolve('src'))
     config.resolve.alias.set('#', resolve('types'))
     config.resolve.alias.set('&', resolve('mock'))
-    // vue-i18n配置
-    config.resolve.alias.set('vue-i18n', 'vue-i18n/dist/vue-i18n.cjs.js')
     // svg-sprite-loader配置
     config.module.rule('svg').exclude.add(resolve('src/assets/svg')).end()
     config.module

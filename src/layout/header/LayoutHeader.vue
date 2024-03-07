@@ -17,7 +17,6 @@
     </div>
     <div class="header-action">
       <AppNotice v-if="getShowNotice" class="header-action-item"></AppNotice>
-      <AppSetting v-if="getShowSetting" class="header-action-item"></AppSetting>
     </div>
   </ElHeader>
 </template>
@@ -55,9 +54,6 @@ export default defineComponent({
     SiderTrigger,
     AppNotice,
     FullScreen,
-    AppSetting: createAsyncComponent(() => import('../setting/AppSetting.vue'), {
-      loading: true
-    }),
     BreadCrumb,
     SvgIcon,
     AppTitle

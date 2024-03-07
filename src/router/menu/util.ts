@@ -88,8 +88,8 @@ function deleteRoutesFromMenu(
     return undefined
   }
   // meta赋值,包括按钮等等
-  const { meta, name, rights, icon, hideMenu = false, orderNo, fixedTab = false } = flatMenu[index]
-  route.meta = { ...meta, title: name, rights, icon, hideMenu, orderNo, fixedTab }
+  const { meta, name, rights, hideMenu = false, orderNo, fixedTab = false } = flatMenu[index]
+  route.meta = { ...meta, title: name, rights, hideMenu, orderNo, fixedTab }
 
   route.children = route.children
     ?.map((item) => deleteRoutesFromMenu(flatMenu, item, currentRoutePath))
